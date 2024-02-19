@@ -2,7 +2,7 @@ package cz.engeto.ja;
 
 import java.math.BigDecimal;
 
-public class Computer {
+public class Computer implements Comparable<Computer> {
 
     private String description;
     private int yearOfProduction;
@@ -43,10 +43,13 @@ public class Computer {
     @Override
     public String
     toString() {
-        return "Computer----" +
-                "description: " + description + '\'' +
-                ", yearOfProduction: " + yearOfProduction +
-                ", price: " + price +
-                '}';
+        return description +
+                "--- yearOfProduction: " + yearOfProduction +
+                ", price: " + price + " CZK";
+    }
+
+    @Override
+    public int compareTo(Computer otherComputer) {
+        return this.description.compareTo(otherComputer.description);
     }
 }
