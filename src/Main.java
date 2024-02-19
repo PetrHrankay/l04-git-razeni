@@ -9,21 +9,45 @@ public class Main {
 
         Computer computer1 = new Computer("Dell", 2019, BigDecimal.valueOf(15000));
         Computer computer2 = new Computer("HP", 2018, BigDecimal.valueOf(12000));
-        Computer computer3 = new Computer("Lenovo", 2017, BigDecimal.valueOf(10000));
+        Computer computerX = new Computer("HP", 2018, BigDecimal.valueOf(12000));
+        Computer computerY = new Computer("HP", 2018, BigDecimal.valueOf(11000));
+        Computer computerZ = new Computer("HP", 2018, BigDecimal.valueOf(13000));
+        Computer computer3 = new Computer("Lenivo", 2017, BigDecimal.valueOf(10000));
 
-        computers.add(computer1);
-        computers.add(computer2);
-        computers.add(computer3);
+        computers.addAll(List.of(computer1, computer2, computer3, computerX, computerY, computerZ));
+//        computers.add(computer1);
+//        computers.add(computer2);
+//        computers.add(computer3);
+
 
         for (Computer computer : computers) {
             System.out.println(computer.getDescription() + " " + computer.getYearOfProduction() + " " + computer.getPrice());
         }
 
-        computers.sort(Comparator.comparing(Computer::getPrice).reversed());
+        computers.sort(Comparator.comparing(Computer::getYearOfProduction));
 
-        System.out.println("\nSorted by highest price:\n");
+        System.out.println("\nSorted by year of production:\n");
         computers.forEach(System.out::println);
 
 
+        computers.sort(Comparator.comparing(Computer::getPrice).reversed());
+
+        System.out.println("\nSorted by price from highest:\n");
+        computers.forEach(System.out::println);
+
+
+        computers.sort(Comparator.comparing(Computer::getPrice));
+
+        System.out.println("\nSorted by price from lowest:\n");
+        computers.forEach(System.out::println);
+
+
+        Collections.sort(computers);
+        System.out.println("\nSorted by description:\n");
+        computers.forEach(System.out::println);
+
+        computers.sort(new ComputerComparator());
+        System.out.println("\nSorted by my own comparator:\n");
+        computers.forEach(System.out::println);
     }
 }
