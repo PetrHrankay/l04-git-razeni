@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Main {
 
-    // jinak
+    // Pokus
 
     public static void main(String[] args) {
         List<Computer> defaultList = new ArrayList<>();
@@ -25,9 +25,13 @@ public class Main {
 
     }
 
+    public static void pokus() {
+
+    }
+
     private static void jinaMetoda() {
-        // ... 
-        
+        // ...
+
     }
 
 
