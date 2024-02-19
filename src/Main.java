@@ -7,6 +7,8 @@ import java.util.*;
 
 public class Main {
 
+    // jinak
+
     public static void main(String[] args) {
         List<Computer> defaultList = new ArrayList<>();
         defaultList.add(new Computer("Dell", 2019,BigDecimal.valueOf(15000)));
@@ -21,6 +23,11 @@ public class Main {
 
 
 
+    }
+
+    private static void jinaMetoda() {
+        // ... 
+        
     }
 
 
