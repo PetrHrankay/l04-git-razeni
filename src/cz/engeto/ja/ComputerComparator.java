@@ -1,3 +1,5 @@
+package cz.engeto.ja;
+
 import cz.engeto.ja.Computer;
 
 import java.util.Comparator;
